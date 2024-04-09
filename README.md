@@ -31,13 +31,6 @@ Allows the creation of local Kubernetes clusters in Docker containers.
 - `Additional features`
 Lightweight and quick tool for deploying cluster
 
-### Pros and Cons
-
-- Easy to use
-- fast cluster creation
-- stable work
-- Community documentation and support
-- Time for configuration 
 
 |                                | **Minikube**                                     | **Kind**                                         | **k3d**                                          | **Podman**                                       |
 |--------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------|
