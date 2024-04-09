@@ -43,3 +43,7 @@ Lightweight and quick tool for deploying cluster
 ![Kind Demo](kind.gif)
 
 ![Minikube Demo](minikube.gif)
+
+## Conclusion
+
+Given the context of AsciiArtify as startup and developers don't have DevOps experience k3d is the starting point for experimenting with Kubernetes since it allows to fastly and easily deploy cluster. But in later development Minikube seems the good option because it has many additional features and allows flexible configuration. 
