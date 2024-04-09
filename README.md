@@ -37,11 +37,12 @@ Lightweight and quick tool for deploying cluster
 - fast cluster creation
 - stable work
 - Community documentation and support
+- Time for configuration 
 
 |                                | **Minikube**                                     | **Kind**                                         | **k3d**                                          | **Podman**                                       |
 |--------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------|
 | **Pros**                                      | + Easy to use<br> + Good documentation and community support | + Works within Docker containers |  + Works within Docker containers<br>+ Fast cluster creation and testing | + Easy to use<br>+ Works within Docker containers<br>+ Light alternative to Docker 
-| **Cons**                                      | - Doubts about scalability | - Limited information on scalability<br>- Limited community documentation<br>- Less functions than in Minikube | - Limited documentation<br>- Potential scalability concerns | - Limited information on scalability<br>- Limited community documentation |
+| **Cons**                                      | - Doubts about scalability<br> - Time for configuration | - Limited information on scalability<br>- Limited community documentation<br>- Less functions than in Minikube | - Limited documentation<br>- Potential scalability concerns | - Limited information on scalability<br>- Limited community documentation |
 
 
 ![K3D Demo](k3d.gif)
