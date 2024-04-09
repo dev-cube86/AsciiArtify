@@ -4,31 +4,31 @@
 ### Minikube
 Local Kubernetes system which allows to deploy Kubernetes cluster on one computer
 
-- OS and Architectures support
+- `OS and Architectures support`
 Supports Linux, MacOS and Windows and different architectures.
-- Automation capability
+- `Automation capability`
 Allows to automate deployment process with scripts
-- Additional features
+- `Additional features`
 Monitoring and cluser management
 
 ### Kind
 Tool which allows to create local Kubernetes clusters in Docker container
 
-- OS and Architectures support
+- `OS and Architectures support`
 Supports Linux, MacOS and Windows and but limited number of architectures.
-- Automation capability
+- `Automation capability`
 Deploy multinode clusters on one computer
-- Additional features
+- `Additional features`
 Integration with CI/CD
 
 ### k3d
 Tool for creating local Kubernetes clusters in Docker containers with Rancher Kubernetes Engine (RKE). 
 
-- OS and Architectures support
+- `OS and Architectures support`
 Supports OSes which support Docker.
-- Automation capability
+- `Automation capability`
 Allows the creation of local Kubernetes clusters in Docker containers.
-- Additional features
+- `Additional features`
 Lightweight and quick tool for deploying cluster
 
 ### Pros and Cons
