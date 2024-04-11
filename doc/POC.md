@@ -91,9 +91,29 @@ Handling connection for 8080
 ```
 
 In order to work on GitHub Codespaces Http protocol should be changed to Https in Ports tab:
-![Screenshot of Github port forwarding.](http://icecream.me/f275ffd5246533e4da3fee7a29911bff)
+![Screenshot of Github port forwarding.](.img/GitHubPortForwarding.png)
 
 Use kubectl command to get named secret and decode it with Base64 gives a password. Login using it on Argo CD UI. 
 ```bash
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 ```
+
+![+ NEW APP](.img/ArgoNewApp.png)
+
+Set Application Name to 'asciiartify'
+
+Set project as default
+
+![+ NEW APP](.img/NewAppConfigs.png)
+
+Specify Repository URL with application which has Kubernetes manifests
+
+Leave default cluster URL
+
+![+ NEW APP](.img/AppStatus.png)
+
+After creation application status is displayed as OutOfSync
+
+![+ NEW APP](.img/AppSynced.png)
+
+To get detailed information open created application. You can see hierarchical structure of the application.
