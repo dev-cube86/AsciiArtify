@@ -12,7 +12,7 @@ Argo CD follows the GitOps pattern of using Git repositories as the source of tr
 
 ## Installation guide
 
-1. 
+1. Create K3D cluster 
 ```bash
 $ k3d cluster create argo
 
@@ -47,4 +47,53 @@ users:
   user:
     client-certificate-data: ...
     client-key-data: ...
+```    
 
+2. Install ArgoCD
+```bash
+$ kubectl create namespace argocd
+namespace/argocd created
+
+$ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+...
+customresourcedefinition.apiextensions.k8s.io/appprojects.argoproj.io created
+...
+serviceaccount/argocd-server created
+...
+clusterrole.rbac.authorization.k8s.io/argocd-server created
+...
+rolebinding.rbac.authorization.k8s.io/argocd-server created
+...
+service/argocd-server created
+...
+deployment.apps/argocd-server created
+...
+networkpolicy.networking.k8s.io/argocd-server-network-policy created
+
+$ kubectl get pods -n argocd
+argocd-redis-66d9777b78-lp52h                       1/1     Running   0          4m40s
+argocd-notifications-controller-6b66d47b45-bxfhj    1/1     Running   0          4m40s
+argocd-applicationset-controller-6c8fbc69b5-9wmj7   1/1     Running   0          4m40s
+argocd-server-5d8d58455f-6fqw9                      1/1     Running   0          4m39s
+argocd-application-controller-0                     1/1     Running   0          4m39s
+argocd-dex-server-59bd76d76-qjx6w                   1/1     Running   0          4m40s
+argocd-repo-server-b9957974f-jnzfr                  1/1     Running   0          4m39s
+```
+
+3. Setup access to ArgoCD GUI
+
+Use method with Port forwarding from Argo CD instruction
+```bash
+$ kubectl port-forward svc/argocd-server -n argocd 8080:443
+Forwarding from 127.0.0.1:8080 -> 8080
+Forwarding from [::1]:8080 -> 8080
+Handling connection for 8080
+```
+
+In order to work on GitHub Codespaces Http protocol should be changed to Https in Ports tab:
+![Screenshot of Github port forwarding.](http://icecream.me/f275ffd5246533e4da3fee7a29911bff)
+
+Use kubectl command to get named secret and decode it with Base64 gives a password. Login using it on Argo CD UI. 
+```bash
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+```
